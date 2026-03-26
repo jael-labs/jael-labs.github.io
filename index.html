@@ -66,7 +66,7 @@
         h3 {
             font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
         p {
             font-size: 1.1rem;
@@ -84,10 +84,20 @@
             list-style: none;
         }
         li {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         
-        /* Button Style */
+        /* Links & Buttons */
+        .github-link {
+            display: inline-block;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+        }
+        .github-link::before {
+            content: "→ ";
+        }
         .btn {
             display: inline-block;
             background-color: var(--accent);
@@ -119,7 +129,7 @@
         <header>
             <section style="border-bottom: none; padding-bottom: 1rem;">
                 <h1>Jael Labs</h1>
-                <p class="subtitle">Computational Engineering & Scientific Advisory specializing in oncology drug discovery, DNA repair pathway therapeutics, and custom data pipelines.</p>
+                <p class="subtitle">Computational Engineering & Scientific Advisory specializing in oncology drug discovery, AI/ML pipeline integration, and custom bioinformatics architecture.</p>
                 <a href="mailto:james@jael-labs.com" class="btn">Inquire About Consulting</a>
             </section>
         </header>
@@ -128,16 +138,16 @@
             <h2>Core Capabilities</h2>
             <ul>
                 <li>
+                    <h3>AI/ML & Deep Learning Integration</h3>
+                    <p>Deploying advanced machine learning workflows (CNN, ViT, CVAEs) to automate and optimize biological data analysis. Bridging the gap between computational automation and wet-lab experimental design.</p>
+                </li>
+                <li>
                     <h3>Pipeline Engineering & Bioinformatics</h3>
-                    <p>Building reproducible, scalable architecture using Python and Snakemake. Expertise in processing complex datasets, VAF tables, and high-throughput biological data.</p>
+                    <p>Building reproducible, scalable architecture for cloud and HPC deployment using Python, Docker, and Snakemake. Expertise in optimizing high-throughput biological data pipelines to eliminate manual bottlenecks.</p>
                 </li>
                 <li>
                     <h3>Drug Discovery & Target Mechanics</h3>
-                    <p>Evaluating molecular mechanisms of disease with a strict first-principles approach. Specialized focus on cell biology and medical chemistry for cancers with defective DNA repair pathways.</p>
-                </li>
-                <li>
-                    <h3>Scientific Advisory & Technical Review</h3>
-                    <p>Providing expert technical consulting, manuscript review, and mechanistic intuition for biotech startups, authors, and research organizations.</p>
+                    <p>Evaluating the molecular mechanisms of disease from first principles. Specialized focus on cell biology, medicinal chemistry, and therapeutic development for cancers with defective DNA repair pathways.</p>
                 </li>
             </ul>
         </section>
@@ -147,23 +157,25 @@
             <ul>
                 <li>
                     <h3>CellPyAbility</h3>
-                    <p>A robust Python package developed to streamline and automate the analysis of complex cell viability assays.</p>
+                    <a href="https://github.com/bindralab/CellPyAbility" class="github-link" target="_blank">View on GitHub</a>
+                    <p>A robust, open-source Python package engineered to automate the analysis of complex high-throughput cell viability assays. Proven to reduce manual analysis time by 95% and save thousands of person-hours annually.</p>
                 </li>
                 <li>
                     <h3>crispy_snake</h3>
-                    <p>A comprehensive Snakemake pipeline engineered for the rapid, reproducible processing and analysis of CRISPR screen datasets.</p>
+                    <a href="https://github.com/bindralab/crispy_snake" class="github-link" target="_blank">View on GitHub</a>
+                    <p>A comprehensive, scalable Snakemake pipeline designed for the rapid, end-to-end processing and reproducible analysis of CRISPR screen datasets on HPC clusters.</p>
                 </li>
                 <li>
                     <h3>Expert Technical Review</h3>
-                    <p>Provided foundational scientific advisory and biological mechanism review for major commercial publications, ensuring mechanistic accuracy in cancer biology.</p>
+                    <p>Provided foundational scientific advisory, biological mechanism review, and manuscript auditing for major commercial publications and #1 NYT bestselling author, ensuring absolute mechanistic accuracy in oncology and cellular biology.</p>
                 </li>
             </ul>
         </section>
 
         <section>
             <h2>The Principal</h2>
-            <p>Jael Labs is operated by James Elia, a PhD candidate in Pathology and Molecular Medicine at Yale University.</p>
-            <p>Rather than focusing on clinical slide reading, James operates at the intersection of computer science and biology. His research and consulting emphasize building deep mechanistic intuition, creating therapeutics via cell biology and medical chemistry, and translating complex biological problems into clean, automated computational pipelines.</p>
+            <p>Jael Labs is operated by James Elia, a Machine Learning Scientist and PhD candidate in Pathology and Molecular Medicine at Yale University.</p>
+            <p>Operating exclusively at the intersection of computer science and wet-lab biology, James focuses on building deep mechanistic intuition from first principles rather than clinical slide reading. His previous research elucidated the mechanism of action for novel cancer therapeutics, leading directly to a $1.3B biopharma acquisition. Today, his consulting leverages that rigorous scientific foundation to translate complex biological problems into clean, automated computational pipelines.</p>
         </section>
 
         <footer>
