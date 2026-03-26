@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jael Labs | Computational Engineering & Scientific Advisory</title>
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --bg-color: #FAFAFA;
+            --text-main: #111827;
+            --text-muted: #4B5563;
+            --accent: #0F172A;
+            --border: #E5E7EB;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            transition: border-color 0.2s ease;
+        }
+        a:hover {
+            border-bottom: 1px solid var(--accent);
+        }
+        
+        /* Layout Structure */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        section {
+            margin-bottom: 5rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* Lists & Grid */
+        ul {
+            list-style: none;
+        }
+        li {
+            margin-bottom: 2rem;
+        }
+        
+        /* Button Style */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+            border: none;
+            transition: opacity 0.2s ease;
+        }
+        .btn:hover {
+            opacity: 0.9;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <section style="border-bottom: none; padding-bottom: 1rem;">
+                <h1>Jael Labs</h1>
+                <p class="subtitle">Computational Engineering & Scientific Advisory specializing in oncology drug discovery, DNA repair pathway therapeutics, and custom data pipelines.</p>
+                <a href="mailto:james@jael-labs.com" class="btn">Inquire About Consulting</a>
+            </section>
+        </header>
+
+        <section>
+            <h2>Core Capabilities</h2>
+            <ul>
+                <li>
+                    <h3>Pipeline Engineering & Bioinformatics</h3>
+                    <p>Building reproducible, scalable architecture using Python and Snakemake. Expertise in processing complex datasets, VAF tables, and high-throughput biological data.</p>
+                </li>
+                <li>
+                    <h3>Drug Discovery & Target Mechanics</h3>
+                    <p>Evaluating molecular mechanisms of disease with a strict first-principles approach. Specialized focus on cell biology and medical chemistry for cancers with defective DNA repair pathways.</p>
+                </li>
+                <li>
+                    <h3>Scientific Advisory & Technical Review</h3>
+                    <p>Providing expert technical consulting, manuscript review, and mechanistic intuition for biotech startups, authors, and research organizations.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Past Projects & Tooling</h2>
+            <ul>
+                <li>
+                    <h3>CellPyAbility</h3>
+                    <p>A robust Python package developed to streamline and automate the analysis of complex cell viability assays.</p>
+                </li>
+                <li>
+                    <h3>crispy_snake</h3>
+                    <p>A comprehensive Snakemake pipeline engineered for the rapid, reproducible processing and analysis of CRISPR screen datasets.</p>
+                </li>
+                <li>
+                    <h3>Expert Technical Review</h3>
+                    <p>Provided foundational scientific advisory and biological mechanism review for major commercial publications, ensuring mechanistic accuracy in cancer biology.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The Principal</h2>
+            <p>Jael Labs is operated by James Elia, a PhD candidate in Pathology and Molecular Medicine at Yale University.</p>
+            <p>Rather than focusing on clinical slide reading, James operates at the intersection of computer science and biology. His research and consulting emphasize building deep mechanistic intuition, creating therapeutics via cell biology and medical chemistry, and translating complex biological problems into clean, automated computational pipelines.</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Jael Labs LLC. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
