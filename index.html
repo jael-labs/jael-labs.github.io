@@ -10,6 +10,8 @@
     <meta name="keywords" content="bioinformatics consulting, computational biology, oncology drug discovery, AI in life sciences, Yale, cancer therapeutics, machine learning">
     <meta name="author" content="James Elia">
     
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
     <link rel="canonical" href="https://jael-labs.com/">
 
     <meta property="og:type" content="website">
@@ -65,8 +67,8 @@
             --bg-color: #FAFAFA;
             --text-main: #111827;
             --text-muted: #4B5563;
-            --accent: #2563EB; /* Royal Blue */
-            --accent-hover: #1D4ED8;
+            --accent: #EA580C; /* Deep Tech Orange for light background contrast */
+            --accent-hover: #C2410C;
             --btn-text: #FFFFFF;
             --border: #E5E7EB;
         }
@@ -77,8 +79,8 @@
                 --bg-color: #0F172A; /* Deep Slate */
                 --text-main: #F8FAFC; /* Off-white for high contrast */
                 --text-muted: #94A3B8; /* Cool gray */
-                --accent: #38BDF8; /* Sky Blue for dark mode visibility */
-                --accent-hover: #7DD3FC;
+                --accent: #F97316; /* Vibrant Tech Orange for dark background */
+                --accent-hover: #FB923C;
                 --btn-text: #0F172A; /* Dark text on bright button */
                 --border: #1E293B; /* Subtle dark border */
             }
@@ -155,6 +157,17 @@
             font-size: 1.1rem;
             color: var(--text-muted);
             margin-bottom: 1.5rem;
+        }
+        
+        blockquote {
+            margin: 2.5rem 0;
+            padding-left: 1.5rem;
+            border-left: 4px solid var(--accent);
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text-muted);
+            line-height: 1.8;
+            transition: border-color 0.3s ease, color 0.3s ease;
         }
 
         .subtitle {
