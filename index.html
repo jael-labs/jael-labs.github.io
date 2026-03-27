@@ -7,32 +7,55 @@
     <style>
         /* CSS Reset & Variables */
         :root {
+            /* Light Theme Variables */
             --bg-color: #FAFAFA;
             --text-main: #111827;
             --text-muted: #4B5563;
-            --accent: #0F172A;
+            --accent: #2563EB; /* Royal Blue */
+            --accent-hover: #1D4ED8;
+            --btn-text: #FFFFFF;
             --border: #E5E7EB;
         }
+
+        /* Dark Theme Variables (Auto-detects OS preference) */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0F172A; /* Deep Slate */
+                --text-main: #F8FAFC; /* Off-white for high contrast */
+                --text-muted: #94A3B8; /* Cool gray */
+                --accent: #38BDF8; /* Sky Blue for dark mode visibility */
+                --accent-hover: #7DD3FC;
+                --btn-text: #0F172A; /* Dark text on bright button */
+                --border: #1E293B; /* Subtle dark border */
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            /* Smooth transition for theme switching */
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
         a {
             color: var(--accent);
             text-decoration: none;
             border-bottom: 1px solid var(--border);
-            transition: border-color 0.2s ease;
+            transition: border-color 0.2s ease, color 0.2s ease;
         }
+
         a:hover {
-            border-bottom: 1px solid var(--accent);
+            color: var(--accent-hover);
+            border-bottom: 1px solid var(--accent-hover);
         }
         
         /* Layout Structure */
@@ -41,11 +64,14 @@
             margin: 0 auto;
             padding: 4rem 2rem;
         }
+
         section {
             margin-bottom: 5rem;
             padding-bottom: 3rem;
             border-bottom: 1px solid var(--border);
+            transition: border-color 0.3s ease;
         }
+
         section:last-of-type {
             border-bottom: none;
         }
@@ -57,22 +83,26 @@
             letter-spacing: -0.02em;
             margin-bottom: 0.5rem;
         }
+
         h2 {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
             letter-spacing: -0.01em;
         }
+
         h3 {
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.25rem;
         }
+
         p {
             font-size: 1.1rem;
             color: var(--text-muted);
             margin-bottom: 1.5rem;
         }
+
         .subtitle {
             font-size: 1.25rem;
             color: var(--text-muted);
@@ -83,6 +113,7 @@
         ul {
             list-style: none;
         }
+
         li {
             margin-bottom: 2.5rem;
         }
@@ -94,23 +125,35 @@
             font-weight: 500;
             margin-bottom: 0.75rem;
             color: var(--text-muted);
+            border-bottom: none; /* Override default link border */
         }
+
         .github-link::before {
             content: "→ ";
+            color: var(--accent);
         }
+
+        .github-link:hover {
+            color: var(--accent);
+            border-bottom: none;
+        }
+
         .btn {
             display: inline-block;
             background-color: var(--accent);
-            color: #ffffff;
+            color: var(--btn-text);
             padding: 0.75rem 1.5rem;
             border-radius: 6px;
-            font-weight: 500;
+            font-weight: 600;
             border: none;
-            transition: opacity 0.2s ease;
+            transition: background-color 0.2s ease, transform 0.1s ease;
         }
+
         .btn:hover {
-            opacity: 0.9;
+            background-color: var(--accent-hover);
+            color: var(--btn-text);
             border: none;
+            transform: translateY(-1px);
         }
 
         /* Footer */
