@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Jael Labs | Life Science and Research Computing Consultancy</title>
-    <meta name="title" content="Jael Labs | Life Science and Research Computing Consultancy">
+    <title>Jael Labs | Biomedicine and Research Computing Consultancy</title>
+    <meta name="title" content="Jael Labs | Biomedicine and Research Computing Consultancy">
     <meta name="description" content="Jael Labs is a specialized consultancy bridging oncology drug discovery, AI/ML deep learning integration, and scalable bioinformatics pipelines.">
     <meta name="keywords" content="bioinformatics consulting, computational biology, oncology drug discovery, AI in life sciences, Yale, cancer therapeutics, machine learning">
     <meta name="author" content="James Elia">
@@ -16,50 +16,13 @@
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jael-labs.com/">
-    <meta property="og:title" content="Jael Labs | Life Science and Research Computing Consultancy">
+    <meta property="og:title" content="Jael Labs | Biomedicine and Research Computing Consultancy">
     <meta property="og:description" content="Bridging wet-lab oncology research and computational engineering. Custom bioinformatics architecture and AI/ML pipeline integration.">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://jael-labs.com/">
-    <meta property="twitter:title" content="Jael Labs | Life Science and Research Computing Consultancy">
+    <meta property="twitter:title" content="Jael Labs | Biomedicine and Research Computing Consultancy">
     <meta property="twitter:description" content="Bridging wet-lab oncology research and computational engineering. Custom bioinformatics architecture and AI/ML pipeline integration.">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Jael Labs",
-      "url": "https://jael-labs.com",
-      "description": "Life Science and Research Computing Consultancy specializing in oncology, drug discovery, AI/ML pipeline integration, and custom bioinformatics architecture.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "New Haven",
-        "addressRegion": "CT",
-        "addressCountry": "US"
-      },
-      "founder": {
-        "@type": "Person",
-        "name": "James Elia",
-        "jobTitle": "Principal",
-        "alumniOf": {
-          "@type": "CollegeOrUniversity",
-          "name": "Yale University"
-        },
-        "sameAs": [
-          "https://jlelia.net",
-          "https://github.com/jlelia",
-          "https://linkedin.com/in/jlelia"
-        ]
-      },
-      "knowsAbout": [
-        "Bioinformatics",
-        "Machine Learning",
-        "Oncology",
-        "Drug Discovery",
-        "Computational Biology",
-        "Python"
-      ]
-    }
-    </script>
     <style>
         /* CSS Reset & Variables */
         :root {
@@ -67,22 +30,24 @@
             --bg-color: #FAFAFA;
             --text-main: #111827;
             --text-muted: #4B5563;
-            --accent: #EA580C; /* Deep Tech Orange for light background contrast */
+            --accent: #EA580C; 
             --accent-hover: #C2410C;
             --btn-text: #FFFFFF;
             --border: #E5E7EB;
+            --input-bg: #FFFFFF;
         }
 
         /* Dark Theme Variables (Auto-detects OS preference) */
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg-color: #0F172A; /* Deep Slate */
-                --text-main: #F8FAFC; /* Off-white for high contrast */
-                --text-muted: #94A3B8; /* Cool gray */
-                --accent: #F97316; /* Vibrant Tech Orange for dark background */
+                --bg-color: #0F172A; 
+                --text-main: #F8FAFC; 
+                --text-muted: #94A3B8; 
+                --accent: #F97316; 
                 --accent-hover: #FB923C;
-                --btn-text: #0F172A; /* Dark text on bright button */
-                --border: #1E293B; /* Subtle dark border */
+                --btn-text: #0F172A; 
+                --border: #1E293B; 
+                --input-bg: #0F172A;
             }
         }
 
@@ -98,7 +63,6 @@
             color: var(--text-main);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            /* Smooth transition for theme switching */
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
@@ -132,12 +96,32 @@
             border-bottom: none;
         }
 
+        /* Header Logo Swapping */
+        .header-logo {
+            max-width: 100%;
+            height: auto;
+            max-height: 50px;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
         /* Typography */
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
             letter-spacing: -0.02em;
             margin-bottom: 0.5rem;
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
         }
 
         h2 {
@@ -177,13 +161,8 @@
         }
 
         /* Lists & Grid */
-        ul {
-            list-style: none;
-        }
-
-        li {
-            margin-bottom: 2.5rem;
-        }
+        ul { list-style: none; }
+        li { margin-bottom: 2.5rem; }
         
         /* Links & Buttons */
         .website-link {
@@ -192,7 +171,7 @@
             font-weight: 500;
             margin-bottom: 0.75rem;
             color: var(--text-muted);
-            border-bottom: none; /* Override default link border */
+            border-bottom: none;
         }
 
         .website-link::before {
@@ -213,14 +192,97 @@
             border-radius: 6px;
             font-weight: 600;
             border: none;
-            transition: background-color 0.2s ease, transform 0.1s ease;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
         }
 
-        .btn:hover {
+        .btn:hover:not(:disabled) {
             background-color: var(--accent-hover);
-            color: var(--btn-text);
-            border: none;
             transform: translateY(-1px);
+        }
+        
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* Modal Structure & Design */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--bg-color);
+            padding: 2.5rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem; right: 1.5rem;
+            font-size: 1.75rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            border: none;
+            background: none;
+            transition: color 0.2s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--accent);
+        }
+
+        /* Form Elements */
+        .form-group { margin-bottom: 1.25rem; }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: var(--input-bg);
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 2rem 0;
+            display: none;
+        }
+
+        .success-message h3 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
         /* Footer */
@@ -238,9 +300,13 @@
         
         <header>
             <section style="border-bottom: none; padding-bottom: 1rem;">
-                <h1>Jael Labs</h1>
-                <p class="subtitle"><strong>Life Science and Research Computing Consultancy</strong> specializing in oncology, drug discovery, AI/ML pipeline integration, and custom bioinformatics architecture.</p>
-                <a href="mailto:james@jael-labs.com" class="btn">Inquire About Consulting</a>
+                <picture>
+                    <source srcset="jael_oneLine_lightShadow.png" media="(prefers-color-scheme: dark)">
+                    <img src="jael_oneLine_darkShadow.png" alt="Jael Labs Logo" class="header-logo">
+                </picture>
+                <h1 class="sr-only">Jael Labs</h1>
+                <p class="subtitle"><strong>Biomedicine and Research Computing Consultancy</strong> specializing in oncology, drug discovery, AI/ML pipeline integration, and custom bioinformatics architecture.</p>
+                <button id="openModalBtn" class="btn">Inquire About Consulting</button>
             </section>
         </header>
 
@@ -295,7 +361,7 @@
         <section>
             <h2>The Founder and Principal</h2>
             <p>Jael Labs is operated by James Elia, a software developer and PhD candidate in Pathology and Molecular Medicine at Yale University.</p>
-            <p>Operating at the intersection of computer science and translational medicine, James focuses on building deep mechanistic intuition from first principles. His previous research elucidated the mechanism of action for novel cancer therapeutics, leading directly to a $1.3B biopharma acquisition. 
+            <p>Operating at the intersection of computer science and translational medicine, James focuses on building deep mechanistic intuition from first principles. His previous research elucidated the mechanism of action for novel cancer therapeutics, leading directly to a $1.3B biopharma acquisition.</p> 
             <p>Today, his consulting leverages that rigorous scientific foundation to translate complex biological problems into clean computational methods and precise language.</p>
             <p>Outside the lab, James has run ultra-marathons, competed nationally for UMass Powerlifting, and won medals in BJJ and judo. He believes there is beauty in the method and brings this dedication to every endeavor.</p>
             <blockquote>"When you're a carpenter making a beautiful chest of drawers, you're not going to use a piece of plywood on the back, even though it faces the wall and nobody will see it. You'll know it's there, so you're going to use a beautiful piece of wood on the back. For you to sleep well at night, the aesthetic, the quality, has to be carried all the way through." <br><br><em>— Steve Jobs</em></blockquote>
@@ -306,6 +372,122 @@
         </footer>
 
     </div>
+
+    <div id="inquiryModal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="closeModalBtn" class="modal-close" aria-label="Close Modal">&times;</button>
+            
+            <div id="formContainer">
+                <h2 style="margin-bottom: 1rem;">Consulting Inquiry</h2>
+                <form id="inquiryForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="org">Organization</label>
+                        <input type="text" id="org" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Inquiry</label>
+                        <textarea id="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" class="btn" style="width: 100%;">Submit Inquiry</button>
+                    <p id="errorMsg" style="color: #EF4444; font-size: 0.9rem; text-align: center; margin-top: 1rem; display: none;">Something went wrong. Please try again later.</p>
+                </form>
+            </div>
+
+            <div id="successContainer" class="success-message">
+                <h3>Message Received</h3>
+                <p>Thank you for reaching out. I will be in touch shortly.</p>
+                <button id="closeSuccessBtn" class="btn" style="margin-top: 1rem;">Close</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('inquiryModal');
+        const openBtn = document.getElementById('openModalBtn');
+        const closeBtn = document.getElementById('closeModalBtn');
+        const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+        
+        const formContainer = document.getElementById('formContainer');
+        const successContainer = document.getElementById('successContainer');
+        const form = document.getElementById('inquiryForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const errorMsg = document.getElementById('errorMsg');
+
+        // CLOUDFLARE WORKER URL
+        const WORKER_URL = 'https://inquiry-handler.jameselia777.workers.dev';
+
+        // Reset Modal State
+        function resetModal() {
+            form.reset();
+            formContainer.style.display = 'block';
+            successContainer.style.display = 'none';
+            errorMsg.style.display = 'none';
+            submitBtn.innerText = 'Submit Inquiry';
+            submitBtn.disabled = false;
+        }
+
+        // Open Modal
+        openBtn.addEventListener('click', () => {
+            resetModal();
+            modal.style.display = 'flex';
+        });
+
+        // Close Modal Handlers
+        const closeModal = () => modal.style.display = 'none';
+        closeBtn.addEventListener('click', closeModal);
+        closeSuccessBtn.addEventListener('click', closeModal);
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Handle Async Form Submission
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // UI State: Loading
+            submitBtn.innerText = 'Transmitting...';
+            submitBtn.disabled = true;
+            errorMsg.style.display = 'none';
+            
+            const payload = {
+                name: document.getElementById('name').value,
+                org: document.getElementById('org').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            try {
+                const response = await fetch(WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    // UI State: Success
+                    formContainer.style.display = 'none';
+                    successContainer.style.display = 'block';
+                } else {
+                    throw new Error('Server rejected the payload.');
+                }
+            } catch (error) {
+                console.error('Transmission Error:', error);
+                // UI State: Error
+                submitBtn.innerText = 'Submit Inquiry';
+                submitBtn.disabled = false;
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
 
 </body>
 </html>
